@@ -1,7 +1,11 @@
 import SwiftUI
 
 struct Skill_component: View {
-    var progress: CGFloat = 0.6
+    // TODO:
+    // - [] variable progress based on how many hours completed
+    // - [] background color for user skill
+    // - [] Skill name
+    var progress: CGFloat = 0.9
     var body: some View {
         HStack{
             VStack {
