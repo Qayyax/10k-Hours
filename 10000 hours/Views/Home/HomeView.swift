@@ -4,13 +4,6 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                // the navigation title part
-                HStack {
-                    Text("Home")
-                    Spacer()
-                    // this would turn to a timer component
-                    Text("Timer")
-                }
                 // Here would be the list of skills components
                 VStack {
                     // There should probably be a rate limiting of how many skills
@@ -27,6 +20,12 @@ struct HomeView: View {
                 Spacer()
             }
             .padding()
+            .navigationTitle("Home")
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Text("Timer component")
+                }
+            }
         }
     }
 }
