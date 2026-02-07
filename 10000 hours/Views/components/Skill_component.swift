@@ -20,7 +20,7 @@ struct Skill_component: View {
                 let clamped = max(0, min(progress, 1))   // ensure 0...1
                 let width = proxy.size.width * clamped
                 
-                Color.blue
+                Color.blue.opacity(0.6)
                     .frame(width: width)                          // progress width
                     .frame(maxHeight: .infinity, alignment: .leading)
                     .mask(RoundedRectangle(cornerRadius: 20))     // confine to rounded shape
@@ -33,8 +33,13 @@ struct Skill_component: View {
                     .stroke(.black, lineWidth: 5)
             )
             .overlay(alignment: .bottomTrailing){
-                Text("3 Hrs/ 10,000 Hrs")
+                Text("3 Hrs")
                     .padding(.bottom)
+                    .padding(.trailing)
+            }
+            .overlay(alignment: .topTrailing){
+                Text("10,000 Hrs")
+                    .padding(.top)
                     .padding(.trailing)
             }
     }
