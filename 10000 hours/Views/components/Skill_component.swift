@@ -11,6 +11,17 @@ struct Skill_component: View {
             .padding(30)
             Spacer()
         }
+        .background{
+            GeometryReader { proxy in
+                let clamped = max(0, min(progress, 1))   // ensure 0...1
+                let width = proxy.size.width * clamped
+                
+                Color.blue
+                    .frame(width: width)                          // progress width
+                    .frame(maxHeight: .infinity, alignment: .leading)
+                    .mask(RoundedRectangle(cornerRadius: 20))     // confine to rounded shape
+            }
+         }
         .frame(maxWidth: .infinity)
         .background(in: RoundedRectangle(cornerRadius: 20))
             .overlay(
@@ -22,7 +33,6 @@ struct Skill_component: View {
                     .padding(.bottom)
                     .padding(.trailing)
             }
-            // another overlay for progress color
     }
 }
 
