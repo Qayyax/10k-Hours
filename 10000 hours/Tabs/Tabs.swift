@@ -14,7 +14,7 @@ struct Tabs: View {
                 HomeView()
             }
             Tab("Skills", systemImage: "list.bullet") {
-                Text("Skills page")
+                Skills_View()
             }
             Tab("Logs", systemImage: "book.pages") {
                 Text("Logs page")
