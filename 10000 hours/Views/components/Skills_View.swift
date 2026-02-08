@@ -3,12 +3,12 @@ import SwiftUI
 struct Skills_View: View {
     @State private var progress = 0.5
     var body: some View {
-        ZStack {
-            VStack {
+        ZStack(alignment: .leading) {
+            VStack(alignment: .leading) {
+                // Progressive View component
                 VStack(alignment: .leading) {
                     Text("3/ 10")
-                    ProgressView(value: progress) // would make a custom progress view
-                        .progressViewStyle(GaugeProgressStyle())
+                    ProgressView(value: progress)                         .progressViewStyle(GaugeProgressStyle())
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
@@ -16,6 +16,26 @@ struct Skills_View: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(.black, lineWidth: 5)
                 }
+                
+                // Reason for Practice component
+                VStack(alignment: .leading){
+                    Text("Reason for Practice")
+                        .font(.title2.bold())
+                    VStack {
+                        Text("I am practicing how to code because ...")
+                        Text("I am practicing how to code because ...")
+                        Text("I am practicing how to code because ...")
+                        // the text should show likw three lines
+                        // when you click it, it should then beable to open a .sheet so you can see the whole thing
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .overlay{
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.black, lineWidth: 5)
+                    }
+                }
+//                .frame(maxWidth: .infinity)
                 Text("I am buidind this skill because...")
                 Text("Logs")
                 Text("Practice play button")
