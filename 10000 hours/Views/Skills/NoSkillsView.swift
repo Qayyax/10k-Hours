@@ -11,6 +11,10 @@ struct NoSkillsView: View {
     var body: some View {
         ZStack {
             VStack{
+                Image(systemName: "plus")
+                    .font(.system(size: 70))
+                    .foregroundStyle(.gray)
+                    .padding(.bottom, 40)
                 VStack (spacing: 20) {
                     Text("No Skills Yet")
                         .font(.title.bold())
@@ -18,6 +22,8 @@ struct NoSkillsView: View {
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.gray)
                 }
+                .padding(.bottom, 40)
+                PrimaryBtn(title: "Add Skill", action: {print("Add skill--")})
             }
             .padding()
         }
