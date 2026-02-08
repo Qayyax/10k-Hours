@@ -17,7 +17,7 @@ struct Tabs: View {
                 Skills_View()
             }
             Tab("Logs", systemImage: "book.pages") {
-                Text("Logs page")
+                LogsView()
             }
             Tab("Settings", systemImage: "gear") {
                 Text("Settings page")
