@@ -11,10 +11,15 @@ struct NoLogsView: View {
     var body: some View {
         VStack(spacing: 40) {
             Image(systemName: "calendar")
-            
-            VStack {
+                .font(.system(size: 70))
+                .foregroundStyle(.gray)
+
+            VStack(spacing: 20) {
                 Text("No Logs Yet")
+                    .font(.title.bold())
+                
                 Text("Start a timer to create your first practice entry!")
+                    .foregroundStyle(.gray)
             }
         }
     }
