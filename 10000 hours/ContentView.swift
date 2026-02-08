@@ -5,15 +5,13 @@ struct ContentView: View {
     //    @Environment(\.modelContext) private var modelContext
     //    @Query private var items: [Item]
     var body: some View {
-        VStack {
-            Text("Hello world")
-        }
-  }
+        Tabs()
+    }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+//        .modelContainer(for: Item.self, inMemory: true)
 }
         //    private func addItem() {
         //        withAnimation {
