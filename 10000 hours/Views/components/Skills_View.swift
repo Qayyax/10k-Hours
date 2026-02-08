@@ -35,10 +35,14 @@ struct Skills_View: View {
                             .stroke(.black, lineWidth: 5)
                     }
                 }
-//                .frame(maxWidth: .infinity)
-                Text("I am buidind this skill because...")
-                Text("Logs")
+                
+                // Logs component
+                VStack(alignment: .leading) {
+                    Text("Logs")
+                        .font(.title2.bold())
+                }
                 Text("Practice play button")
+                Spacer()
             }
             .padding()
         }
