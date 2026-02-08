@@ -19,18 +19,7 @@ struct NoSkillView: View {
                     Text("Create your first skill tracking your path to 10,000 hours of mystery.")
                         .multilineTextAlignment(.center)
                 }
-                Button(action: {print("dd")}) {
-                    Text("Add your first skill")
-                        .font(.title2.bold())
-                        .foregroundStyle(.white)
-                }
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background {
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(.purple)
-//                        .stroke(style: StrokeStyle(lineWidth: 5))
-                }
+                PrimaryBtn(title: "Add Your First Skill", frame: .infinity, action: {print("Add Skill")})
                 .padding(.top, 40)
             }
         }

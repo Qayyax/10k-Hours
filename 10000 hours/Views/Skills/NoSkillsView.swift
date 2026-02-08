@@ -11,8 +11,15 @@ struct NoSkillsView: View {
     var body: some View {
         ZStack {
             VStack{
-                Text("No Skills Yet")
+                VStack (spacing: 20) {
+                    Text("No Skills Yet")
+                        .font(.title.bold())
+                    Text("Add your first skill to get started on your journey to mastery.")
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.gray)
+                }
             }
+            .padding()
         }
     }
 }
