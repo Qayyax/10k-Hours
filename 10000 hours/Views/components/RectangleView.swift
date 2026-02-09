@@ -22,7 +22,8 @@ struct RectangleView<Content: View>: View {
         .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 20)
-                .fill(.white) // <- Fill style here
+                .fill(.white)
+                .shadow(color: .black, radius: 2, x: 2, y: 6)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20) )
     }
@@ -30,14 +31,17 @@ struct RectangleView<Content: View>: View {
 
 #Preview {
     ZStack {
-        Color.red
+        Color.gray
             .ignoresSafeArea()
-        RectangleView {
-            Text("Hello")
-                .padding()
-                .background(.blue.opacity(0.2))
-            Spacer()
-            Text("Helloww")
+        VStack {
+            RectangleView {
+                Text("Hello")
+                    .padding()
+                    .background(.blue.opacity(0.2))
+                Spacer()
+                Text("Helloww")
+            }
         }
+        .padding()
     }
 }
