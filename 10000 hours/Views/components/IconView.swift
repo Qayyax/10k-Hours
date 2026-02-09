@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct IconView: View {
+    var imageName: String = "bell"
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: imageName)
+            .font(.system(size:40))
+            .foregroundStyle(.purple)
+            .padding()
+            .background{
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(.purple.opacity(0.1))
+            }
     }
 }
 
