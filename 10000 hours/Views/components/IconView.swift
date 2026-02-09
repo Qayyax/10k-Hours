@@ -11,7 +11,7 @@ struct IconView: View {
     var imageName: String = "bell"
     var body: some View {
         Image(systemName: imageName)
-            .font(.system(size:40))
+            .font(.system(size:20))
             .foregroundStyle(.purple)
             .padding()
             .background{
