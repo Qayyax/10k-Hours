@@ -20,7 +20,7 @@ struct Tabs: View {
                 LogsView()
             }
             Tab("Settings", systemImage: "gear") {
-                Text("Settings page")
+                SettingsView()
             }
         }
     }
