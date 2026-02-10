@@ -23,9 +23,9 @@ struct RectangleView<Content: View>: View {
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
-                .shadow(color: .black, radius: 2, x: 2, y: 6)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20) )
+        .shadow(color: .black, radius: 1, x: 5, y: 5)
     }
 }
 
