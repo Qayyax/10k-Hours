@@ -10,7 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     @State private var isPracticeReminder: Bool = true
     @State private var isSoundEffect: Bool = true
-    
+    @State private var isDarkMode: Bool = true
+
     enum SessionTime: String, CaseIterable, Identifiable {
         case m30 = "30m"
         case m45 = "45m"
@@ -19,6 +20,13 @@ struct SettingsView: View {
         var id: Self { self }
     }
     
+    enum Theme: String, CaseIterable, Identifiable {
+        case light = "Light"
+        case dark = "Dark"
+        var id: Self { self }
+    }
+    
+    @State private var themeSelected: Theme = .light
     @State private var sessionTime: SessionTime = .m30
     
     var body: some View {
@@ -71,6 +79,14 @@ struct SettingsView: View {
                             Spacer()
                         }
                         // enum of light and dark
+                        HStack {
+                            ForEach(Theme.allCases, id: \.self) {theme in
+                                let isSelected: Bool = (theme == themeSelected)
+                                Button(action: { themeSelected = theme }) {
+                                    SecondaryBtn(text: theme.rawValue, isPressed: isSelected)
+                                }
+                            }
+                        }
                     }
                 }
             }
