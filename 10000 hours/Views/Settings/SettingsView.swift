@@ -33,6 +33,8 @@ struct SettingsView: View {
         ZStack {
             Color.gray.opacity(0.1)
                 .ignoresSafeArea()
+            ScrollView {
+                
             VStack(spacing: 20) {
                 RectangleView {
                     IconView()
@@ -78,7 +80,6 @@ struct SettingsView: View {
                             .padding(.leading, 10)
                             Spacer()
                         }
-                        // enum of light and dark
                         HStack {
                             ForEach(Theme.allCases, id: \.self) {theme in
                                 let isSelected: Bool = (theme == themeSelected)
@@ -89,8 +90,23 @@ struct SettingsView: View {
                         }
                     }
                 }
+                
+                // About
+                RectangleView {
+                    VStack(spacing: 20){
+                        Image(systemName: "clock")
+                            .font(.system(size: 60))
+                        Text("10K Hours")
+                            .font(.title.bold())
+                        Text("Track your journey to mastery")
+                            .foregroundStyle(.gray)
+                        Text("Version 1.0.0")
+                            .foregroundStyle(.gray)
+                    }
+                }
             }
             .padding()
+            }
         }
     }
 }
