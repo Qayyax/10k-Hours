@@ -51,7 +51,8 @@ struct AddNewSkillView: View {
                             Divider()
                             
                             Text("WHY THIS SKILL?")
-                            TextField("What motivates your to master this skill?", text: $reasonForLearning)
+                            TextField("What motivates your to master this skill?", text: $reasonForLearning, axis: .vertical)
+                                .frame(height: 100, alignment: .top)
                                 
 
                         }
