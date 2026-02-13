@@ -11,6 +11,7 @@ struct AddNewSkillView: View {
     @State private var skillName: String = ""
     @State private var reasonForLearning: String = ""
     @State private var targetHours: Float = 10_000
+    @State  var selectedColor: Color = .purple
     var body: some View {
         ZStack {
             Color.gray
@@ -22,7 +23,7 @@ struct AddNewSkillView: View {
                         VStack {
                             HStack(spacing: 20){
                                 RoundedRectangle(cornerRadius: 20)
-                                    .fill(.blue)
+                                    .fill(selectedColor)
                                     .frame(width: 80, height: 80)
                                 // Name and contecxt textfield here
                                 // The text would change based on state
@@ -37,7 +38,7 @@ struct AddNewSkillView: View {
                                 Spacer()
                             }
                             Divider()
-                            Text("Target: 10000 hours")
+                            Text("Target: \(targetHours, format: .number.precision(.fractionLength(2))) hours")
                                 .foregroundStyle(.gray)
                                 .padding(.top)
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -77,7 +78,7 @@ struct AddNewSkillView: View {
                             .foregroundStyle(.gray)
                             .bold()
                         RectangleView{
-                            
+                            SkillColorGrid(selectedColor: $selectedColor)
                         }
                     }
                 }
