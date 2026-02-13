@@ -2,8 +2,11 @@ import SwiftUI
 
 struct NoSkillView: View {
     var body: some View {
+        NavigationStack {
         ZStack {
-            NavigationStack {
+            Color.gray
+                .opacity(0.3)
+                .ignoresSafeArea()
                 VStack {
                     ZStack(alignment: .center) {
                         Circle()
@@ -27,9 +30,9 @@ struct NoSkillView: View {
                     }
                     .padding(.top, 40)
                 }
+                .padding()
             }
         }
-        .padding()
     }
 }
 

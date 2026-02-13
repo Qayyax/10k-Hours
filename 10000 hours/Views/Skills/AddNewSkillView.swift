@@ -84,6 +84,7 @@ struct AddNewSkillView: View {
                 }
                 .padding()
             }
+            .navigationTitle("Add Skill")
         }
     }
 }
