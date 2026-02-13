@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+struct PrimaryBtnLabel: View {
+    var title: String
+    var frame: CGFloat?
+    var body: some View {
+        Text(title)
+            .font(.title2.bold())
+            .foregroundStyle(.white)
+            .padding()
+            .frame(maxWidth: frame)
+            .background {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.purple)
+            }
+    }
+}
+
 struct PrimaryBtn: View {
     var title: String
     var frame: CGFloat?
