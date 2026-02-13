@@ -71,6 +71,15 @@ struct AddNewSkillView: View {
                     }
                     Text("The 10,000-hour rule suggests this is the path to mastery")
                         .foregroundStyle(.gray)
+                    
+                    VStack(alignment: .leading) {
+                        Text("CHOOSE A COLOR")
+                            .foregroundStyle(.gray)
+                            .bold()
+                        RectangleView{
+                            
+                        }
+                    }
                 }
                 .padding()
             }
