@@ -10,6 +10,7 @@ import SwiftUI
 struct AddNewSkillView: View {
     @State private var skillName: String = ""
     @State private var reasonForLearning: String = ""
+    @State private var targetHours: Float = 10_000
     var body: some View {
         ZStack {
             Color.gray
@@ -50,13 +51,26 @@ struct AddNewSkillView: View {
                                 
                             Divider()
                             
+                            // Reason for the skill
                             Text("WHY THIS SKILL?")
                             TextField("What motivates your to master this skill?", text: $reasonForLearning, axis: .vertical)
                                 .frame(height: 100, alignment: .top)
-                                
+                            
+                            Divider()
+                            
+                            // Target hours for the skill
+                            Text("TARGET HOURS")
+                                // input for number, stepper
+                            
+                            VStack(alignment: .leading) {
+                                Text("\(targetHours, format: .number.precision(.fractionLength(2))) hours")
 
+                                Slider(value: $targetHours, in: 0...10000, step: 5)
+                            }
                         }
                     }
+                    Text("The 10,000-hour rule suggests this is the path to mastery")
+                        .foregroundStyle(.gray)
                 }
                 .padding()
             }
