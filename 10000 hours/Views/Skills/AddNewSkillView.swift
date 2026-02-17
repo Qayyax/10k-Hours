@@ -85,10 +85,18 @@ struct AddNewSkillView: View {
                 .padding()
             }
             .navigationTitle("Add Skill")
+            .toolbar {
+                ToolbarItem {
+                    Button("Add") {
+                    }
+                }
+            }
         }
     }
 }
 
 #Preview {
-    AddNewSkillView()
+    NavigationStack {
+        AddNewSkillView()
+    }
 }
