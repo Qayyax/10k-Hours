@@ -17,13 +17,13 @@ struct Skill_component: View {
         }
         .background{
             GeometryReader { proxy in
-                let clamped = max(0, min(progress, 1))   // ensure 0...1
+                let clamped = max(0, min(progress, 1))
                 let width = proxy.size.width * clamped
                 
                 Color.blue.opacity(0.6)
-                    .frame(width: width)                          // progress width
+                    .frame(width: width)
                     .frame(maxHeight: .infinity, alignment: .leading)
-                    .mask(RoundedRectangle(cornerRadius: 20))     // confine to rounded shape
+                    .mask(RoundedRectangle(cornerRadius: 20))
             }
          }
         .frame(maxWidth: .infinity)
